@@ -9,8 +9,9 @@ var app = express();
 
 app.use(morgan('dev'));
 
-// mount the dishRouter.js here
+// mount the routers here
 require('./dishRouter.js')(express, bodyParser, app);
+require('./promoRouter.js')(express, bodyParser, app);
 
 app.use(express.static(__dirname + '/public'));
 
