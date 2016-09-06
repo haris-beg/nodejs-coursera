@@ -1,5 +1,5 @@
-module.exports = function (express, bodyParser, app)
-{
+var express = require('express');
+var bodyParser = require('body-parser');
   var leaderRouter = express.Router();
   leaderRouter.use(bodyParser.json());
 
@@ -41,6 +41,4 @@ module.exports = function (express, bodyParser, app)
       res.end('Deleting leader: ' + req.params.leaderId);
   });
 
-  app.use('/leadership',leaderRouter);
-
-}
+module.exports = leaderRouter;

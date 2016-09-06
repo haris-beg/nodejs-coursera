@@ -1,5 +1,5 @@
-module.exports = function (express, bodyParser, app)
-{
+var express = require('express');
+var bodyParser = require('body-parser');
   var promoRouter = express.Router();
   promoRouter.use(bodyParser.json());
 
@@ -41,6 +41,4 @@ module.exports = function (express, bodyParser, app)
       res.end('Deleting promotion: ' + req.params.promotionId);
   });
 
-  app.use('/promotions',promoRouter);
-
-}
+module.exports = promoRouter;
