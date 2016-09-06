@@ -12,6 +12,7 @@ app.use(morgan('dev'));
 // mount the routers here
 require('./dishRouter.js')(express, bodyParser, app);
 require('./promoRouter.js')(express, bodyParser, app);
+require('./leaderRouter.js')(express, bodyParser, app);
 
 app.use(express.static(__dirname + '/public'));
 
