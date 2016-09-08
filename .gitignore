@@ -1,3 +1,7 @@
+# Ignoring files created by Nodeclipse
+.project
+.settings
+
 # Logs
 logs
 *.log
