@@ -1,5 +1,6 @@
 // grab the things we need
 var mongoose = require('mongoose');
+var Currency = require('mongoose-currency');
 var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
@@ -27,6 +28,22 @@ var dishSchema = new Schema({
         type: String,
         required: true,
         unique: true
+    },
+    image: {
+        type: String,
+        required: true,
+    },
+    category: {
+        type: String,
+        required: true,
+    },
+    label: {
+        type: String, 
+        default: ''
+    },
+    price: {
+        type: Currency,
+        required: true
     },
     description: {
         type: String,
