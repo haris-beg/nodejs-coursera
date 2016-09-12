@@ -1,7 +1,9 @@
 // grab the things we need
 var mongoose = require('mongoose');
-var Currency = require('mongoose-currency');
 var Schema = mongoose.Schema;
+// Will add the Currency type to the Mongoose Schema types
+require('mongoose-currency').loadType(mongoose);
+var Currency = mongoose.Types.Currency;
 
 // create a schema
 var promotionSchema = new Schema({
@@ -13,6 +15,7 @@ var promotionSchema = new Schema({
     image: {
         type: String,
         required: true,
+        lowercase: true
     },
     label: {
         type: String, 
@@ -20,7 +23,8 @@ var promotionSchema = new Schema({
     },
     price: {
         type: Currency,
-        required: true
+        required: true,
+        min: 0
     },
     description: {
         type: String,
