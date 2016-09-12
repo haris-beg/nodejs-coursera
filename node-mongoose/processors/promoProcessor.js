@@ -26,6 +26,11 @@ module.exports = function(db, Promotions) {
                     if (err) throw err;
                     console.log('Updated Promotion!');
                     console.log(promotion);
+                        
+                    db.collection('promotions').drop(function () {
+                        console.log("*** dropped the promotions collection ***");
+                        db.close();
+                    });
 
                 });
         }, 3000);

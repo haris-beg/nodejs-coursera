@@ -51,6 +51,7 @@ module.exports = function(db, Dishes) {
                         console.log(dish);
 
                         db.collection('dishes').drop(function () {
+                            console.log("*** dropped the dishes collection ***");
                             db.close();
                         });
                     });
